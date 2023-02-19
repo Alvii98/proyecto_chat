@@ -1,20 +1,21 @@
+addEventListener("keyup", (event) => {
+    if(event.target.className != 'emojionearea-editor') return
+
+    if (event.keyCode === 13) {
+        $("#boton_enviar").click();
+    }
+})
+
 $(document).ready(function(){
     ////////////// ACCION CON EL ENTER PARA MANDAR EL MENSAJE /////////////////
-    /* No anda porque es una div*/
-    $('.emojionearea,.message_input').keypress(function(event){
-        alert('holaa')
-        var keycode = (event.keyCode ? event.keyCode : event.which);
-        console.log(keycode)
-        if(keycode == '13'){
-            $("#boton_enviar").click();
-        }
-    })
+
     $('#boton_enviar').click(function(){
         let param = {
-            'mensaje' : $('#mensaje').val(),
+            'mensaje' : $('#mensaje').val() == '' ? $('.emojionearea-editor').text() : $('#mensaje').val(),
             'usuario_id' : $('#usuario_id').val(),
             '_token': $('input[name="_token"]').val()
         }
+
         if(!param.mensaje.trim().length){
             $('.emojionearea').addClass('focuss')
             $('.emojionearea-editor').text('')

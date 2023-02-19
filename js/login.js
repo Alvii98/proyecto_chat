@@ -54,7 +54,6 @@ $(document).ready(function(){
                     alertify.alert(data)
                     return false
                 }else{
-                    codigoGlobal = data.codigo
                     if(data.usuario != ''){
                         $('#numero_correo').attr('readonly', 'true')
                         $('#usuario_correo').attr('readonly', 'true')
@@ -79,7 +78,6 @@ $(document).ready(function(){
             'usuario' : $('#usuario_correo').val(),
             'numero' : $('#numero_correo').val(),
             'codigo' : $('#codigo_correo').val(),
-            'codigoComparar' : codigoGlobal,
             '_token': $('input[name="_token"]').val()
         }
         //return false
