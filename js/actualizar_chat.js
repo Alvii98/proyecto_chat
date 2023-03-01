@@ -1,6 +1,6 @@
 addEventListener("keyup", (event) => {
     if(event.target.className != 'emojionearea-editor') return
-
+    event.target.setAttribute('style','color:white;')
     if (event.keyCode === 13) {
         $("#boton_enviar").click();
     }

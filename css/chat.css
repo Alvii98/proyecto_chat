@@ -120,6 +120,7 @@ body::-webkit-scrollbar-thumb {
   }
 /**** CAMPO DE MENSAJE Y BOTON ENVIAR  ******/
 .message_input {
+  color: white;
   box-sizing: border-box;
   width: calc(100% - 40px) !important;
   position: absolute;
