@@ -9,6 +9,9 @@ $(document).ready(function(){
         $("#div_correo").attr("style", "display: flex !important")
     })  
     $('#por_mensaje').click(function(){
+        // Reproducir audio "Opcion de msj no habilitada"
+        document.querySelector('#audioMsj').play();
+
         alertify.alert('Esta opcion todavia no esta habilitada.')
         return false
         $("#div_login").attr("style", "display: none !important")
@@ -62,7 +65,9 @@ $(document).ready(function(){
                     }
                     $("#boton_correo").attr("style", "display: none")
                     $("#boton_correo_ingresar").attr("style", "display: block")
-                    $("#correo_enviado").attr("style", "display: block !important")        
+                    $("#correo_enviado").attr("style", "display: block !important") 
+                    // Reproducir audio "Se envio codigo"
+                    document.querySelector('#audioVerificacion').play();       
                     alertify.alert('Se envio un correo con el codigo de verificacion.')
                 }
             },
